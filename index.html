@@ -48,7 +48,7 @@
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
                 <a href="#track" class="hover:text-brand-500 transition-colors">Track & Trace</a>
                 <a href="#diensten" class="hover:text-brand-500 transition-colors">Diensten</a>
-                <a href="#portal-info" class="hover:text-brand-500 transition-colors flex items-center gap-1.5 font-semibold text-brand-500">
+                <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors flex items-center gap-1.5 font-semibold text-brand-500">
                     <i class="fa-solid fa-cloud text-xs"></i> Portal
                 </a>
                 <a href="#voordelen" class="hover:text-brand-500 transition-colors">Waarom Ons</a>
@@ -57,10 +57,10 @@
 
             <!-- Portal Login Button & Mobile Menu Toggle -->
             <div class="flex items-center gap-3">
-                <button onclick="togglePortalModal()" class="hidden sm:inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm hover:shadow">
+                <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm hover:shadow">
                     <i class="fa-solid fa-right-to-bracket text-xs text-orange-100"></i>
                     Inloggen Portal
-                </button>
+                </a>
 
                 <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 hover:text-gray-900 p-2 text-xl">
                     <i class="fa-solid fa-bars" id="menu-icon"></i>
@@ -72,12 +72,12 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
             <a href="#track" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Track & Trace</a>
             <a href="#diensten" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Diensten</a>
-            <a href="#portal-info" onclick="toggleMobileMenu()" class="block py-2 text-brand-500 font-semibold hover:text-brand-600">Klantportaal Informatie</a>
+            <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="block py-2 text-brand-500 font-semibold hover:text-brand-600">Klantportaal Direct Inloggen</a>
             <a href="#voordelen" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Waarom Ons</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Contact</a>
-            <button onclick="togglePortalModal(); toggleMobileMenu();" class="w-full text-center bg-brand-500 text-white py-3 rounded-xl font-semibold text-sm">
+            <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand-500 text-white py-3 rounded-xl font-semibold text-sm">
                 Inloggen Portal
-            </button>
+            </a>
         </div>
     </header>
 
@@ -242,10 +242,10 @@
 
                 <!-- Call to Action inside Portal section -->
                 <div class="mt-12 text-center">
-                    <button onclick="togglePortalModal()" class="inline-flex items-center gap-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3.5 rounded-xl text-sm transition-all shadow-md hover:shadow-lg">
+                    <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3.5 rounded-xl text-sm transition-all shadow-md hover:shadow-lg">
                         <i class="fa-solid fa-right-to-bracket text-xs"></i>
-                        <span>Inloggen Klantportaal</span>
-                    </button>
+                        <span>Naar het Klantportaal</span>
+                    </a>
                 </div>
             </div>
         </section>
