@@ -1,1 +1,453 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Alliance - Snelle en Betrouwbare Logistiek</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff5f0',
+                            100: '#ffe6dc',
+                            500: '#c25000',
+                            600: '#a34300',
+                            700: '#853700',
+                            800: '#662a00',
+                            900: '#471d00',
+                            dark: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo met logo.svg -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="logo.svg" alt="Express Alliance Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-brand-500 text-white p-2.5 rounded-xl shadow-md\'><i class=\'fa-solid fa-truck-fast text-xl\'></i></div><div><span class=\'text-xl font-extrabold tracking-tight text-gray-900 block leading-none\'>EXPRESS</span><span class=\'text-xs font-semibold tracking-widest text-brand-500 uppercase\'>Alliance</span></div>';">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
+                <a href="#track" class="hover:text-brand-500 transition-colors">Track & Trace</a>
+                <a href="#diensten" class="hover:text-brand-500 transition-colors">Diensten</a>
+                <a href="#feiten" class="hover:text-brand-500 transition-colors">Over Ons</a>
+                <a href="#faq" class="hover:text-brand-500 transition-colors">Veelgestelde Vragen</a>
+                <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600 transition-colors flex items-center gap-1.5 text-brand-500 font-bold">
+                    <i class="fa-solid fa-cloud text-xs"></i> Portal
+                </a>
+                <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Portal Login Button & Mobile Menu Toggle -->
+            <div class="flex items-center gap-3">
+                <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-sm hover:shadow">
+                    <i class="fa-solid fa-right-to-bracket text-xs text-orange-100"></i>
+                    Inloggen Portal
+                </a>
+
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 hover:text-gray-900 p-2 text-xl">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#track" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Track & Trace</a>
+            <a href="#diensten" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Diensten</a>
+            <a href="#feiten" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Over Ons</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Veelgestelde Vragen (FAQ)</a>
+            <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="block py-2 text-brand-500 font-bold hover:text-brand-600">Portal Inloggen</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-gray-600 font-medium hover:text-brand-500">Contact</a>
+            <a href="https://portal.expressalliance.nl/login" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand-500 text-white py-3 rounded-xl font-bold text-sm">
+                Inloggen Portal
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-b from-brand-500 via-orange-600 to-brand-700 text-white py-20 lg:py-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-block bg-white/20 text-white border border-white/30 text-xs uppercase tracking-widest font-extrabold px-4 py-1.5 rounded-full mb-4">
+                    25 Jaar Ervaring • "We Like To Move It"
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight max-w-4xl mx-auto leading-tight">
+                    Snel, Betrouwbaar & <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-white">Wereldwijd Transport</span>
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto font-medium">
+                    Dé specialist voor dagelijkse snelkoeriersritten, ziekenhuiszendingen (CryoPDP) en internationaal transport onder leiding van Winston Grot.
+                </p>
+
+                <!-- Track & Trace Search Card -->
+                <div id="track" class="mt-10 max-w-2xl mx-auto bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/20 shadow-2xl">
+                    <form onsubmit="handleTrack(event)" class="flex flex-col sm:flex-row gap-3">
+                        <div class="relative flex-grow">
+                            <i class="fa-solid fa-barcode absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                            <input type="text" id="tracking-number" placeholder="Voer zendingsnummer in (bijv. EA-1029)" required
+                                class="w-full pl-11 pr-4 py-3.5 bg-white text-gray-900 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-inner font-medium">
+                        </div>
+                        <button type="submit" class="bg-white hover:bg-orange-50 text-brand-600 font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                            <span>Zoeken</span>
+                        </button>
+                    </form>
+                    <p class="text-xs text-orange-100 mt-2 text-left px-2">Gebruik testcode <button type="button" onclick="fillTestCode()" class="underline font-bold hover:text-white">EA-1029</button></p>
+                </div>
+
+                <!-- Track Result Display Box -->
+                <div id="track-result" class="hidden mt-8 max-w-2xl mx-auto bg-white text-gray-800 rounded-2xl p-6 text-left shadow-2xl transition-all"></div>
+            </div>
+        </section>
+
+        <!-- Stats Counter Bar -->
+        <section id="feiten" class="py-12 bg-white border-b border-orange-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="p-4 rounded-2xl bg-orange-50/50 border border-orange-100">
+                        <div class="text-3xl sm:text-4xl font-black text-brand-500">25+ Jaar</div>
+                        <div class="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">Ervaring in Logistiek</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-orange-50/50 border border-orange-100">
+                        <div class="text-3xl sm:text-4xl font-black text-brand-500">1.550</div>
+                        <div class="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">Ritten Per Jaar</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-orange-50/50 border border-orange-100">
+                        <div class="text-3xl sm:text-4xl font-black text-brand-500">7.500</div>
+                        <div class="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">Zendingen Verwerkt</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-orange-50/50 border border-orange-100">
+                        <div class="text-3xl sm:text-4xl font-black text-brand-500">24/7</div>
+                        <div class="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">Telefonische Spoedservice</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="diensten" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-brand-500">Onze Logistieke Diensten</h2>
+                    <p class="text-3xl font-black text-gray-900 mt-2">Herkenbaar op de weg: "We like to move it"</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-2xl p-8 border border-orange-100 hover:shadow-xl transition-all hover:-translate-y-1 group">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Nationale Snelkoerier</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Directe bezorging van pakketten en documenten van A naar B door heel Nederland en Europa. Geen vertragingen of overladen.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-2xl p-8 border border-orange-100 hover:shadow-xl transition-all hover:-translate-y-1 group">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Medisch & CryoPDP Transport</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Gespecialiseerde ziekenhuiszendingen wereldwijd met strikte temperatuurbewaking en gecontroleerde afhandeling.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-2xl p-8 border border-orange-100 hover:shadow-xl transition-all hover:-translate-y-1 group">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Internationale Zendingen</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Sterke logistieke routes voor klanten uit Nederland, Engeland en wereldwijde eindbestemmingen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION (Over Ons) -->
+        <section id="feiten" class="py-20 bg-white border-t border-orange-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Left Column: Story -->
+                    <div class="space-y-6">
+                        <span class="inline-block bg-brand-100 text-brand-700 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full">
+                            Over Express Alliance
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
+                            Al 25 jaar gedreven door passie voor <span class="text-brand-500">snelheid & precisie</span>.
+                        </h2>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Onder leiding van eigenaar <strong>Winston Grot</strong> is Express Alliance uitgegroeid tot een gevestigde naam in de logistieke wereld. Met gemiddeld <strong>1.550 ritten</strong> en ruim <strong>7.500 zorgvuldig verwerkte zendingen per jaar</strong>, zorgen wij dagelijks dat kostbare en tijdkritische goederen veilig hun bestemming bereiken.
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Of het nu gaat om een spoedrit tussen Nederlandse steden of geconditioneerde ziekenhuiszendingen (zoals CryoPDP) met wereldwijde eindbestemmingen: onze opvallende bestelbussen en dedicated koeriers staan klaar met ons motto: <strong class="text-brand-600 italic">"We like to move it!"</strong>
+                        </p>
+
+                        <!-- Key Highlights -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-orange-50/60 border border-orange-100">
+                                <div class="w-9 h-9 rounded-lg bg-brand-500 text-white flex items-center justify-center font-bold text-sm">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-gray-900">24/7 Bereikbaar</h4>
+                                    <p class="text-[11px] text-gray-500">Direct persoonlijk contact</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-orange-50/60 border border-orange-100">
+                                <div class="w-9 h-9 rounded-lg bg-brand-500 text-white flex items-center justify-center font-bold text-sm">
+                                    <i class="fa-solid fa-temperature-arrow-down"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-gray-900">Medisch Expert</h4>
+                                    <p class="text-[11px] text-gray-500">IATA & CryoPDP regels</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Visual Card / Quote -->
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-brand-500 to-orange-700 text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
+                            <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl font-black pointer-events-none">EA</div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-orange-200">Onze Visie</span>
+                            <blockquote class="text-xl font-bold mt-4 mb-6 leading-snug">
+                                "Logistiek draait niet alleen om het verplaatsen van dozen, maar om het nakomen van beloftes en het bieden van 100% zekerheid bij elke rit."
+                            </blockquote>
+                            <div class="flex items-center gap-4 pt-4 border-t border-white/20">
+                                <div class="w-12 h-12 bg-white text-brand-600 rounded-full flex items-center justify-center font-black text-lg shadow-md">
+                                    WG
+                                </div>
+                                <div>
+                                    <h4 class="font-black text-sm">Winston Grot</h4>
+                                    <p class="text-xs text-orange-200">Eigenaar & Directeur Express Alliance B.V.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION (Veelgestelde Vragen) -->
+        <section id="faq" class="py-20 bg-gray-50">
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="border border-orange-100 rounded-2xl bg-orange-50/30 overflow-hidden">
+                        <button onclick="toggleFaq('faq-6')" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center gap-4 hover:text-brand-500 transition-colors">
+                            <span>6. Zijn mijn goederen standaard verzekerd tijdens het transport?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200" id="icon-faq-6"></i>
+                        </button>
+                        <div id="faq-6" class="hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-orange-100/50 bg-white">
+                            Nee, de goederen zijn niet standaard verzekerd. U kunt dit bij ons wel extra aanvragen; wij kijken dan direct voor u wat de mogelijkheden zijn om dit voor uw zending te regelen.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="border border-orange-100 rounded-2xl bg-orange-50/30 overflow-hidden">
+                        <button onclick="toggleFaq('faq-7')" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center gap-4 hover:text-brand-500 transition-colors">
+                            <span>7. Wat zijn de mogelijkheden voor gekoeld transport en droogijs?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200" id="icon-faq-7"></i>
+                        </button>
+                        <div id="faq-7" class="hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-orange-100/50 bg-white">
+                            Voor speciale zendingen kunnen wij gekoelde transportoplossingen organiseren. Indien vooraf geaccepteerd door de betrokken luchtvaartmaatschappijen en vervoerders, verzorgen we ook het gebruik van droogijs.
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Hierbij beoordelen we per zending of het product, de hoeveelheid koelmiddel en de verpakking voldoen aan de geldende IATA- en veiligheidsregels.</li>
+                                <li>Express Alliance beschikt over middelen zoals droogijs en geconditioneerde opslag voor korte periodes rond het transport.</li>
+                                <li>Neem altijd vooraf contact met ons op voor bevestiging en specifieke instructies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-50 border-t border-orange-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    
+                    <div class="bg-gradient-to-br from-brand-500 to-brand-700 text-white p-8 rounded-3xl flex flex-col justify-between shadow-xl">
+                        <div>
+                            <span class="text-xs uppercase font-extrabold tracking-widest text-orange-200">Express Alliance B.V.</span>
+                            <h3 class="text-2xl font-black mt-1 mb-4">Direct Contact</h3>
+                            <p class="text-orange-100 text-sm mb-8">
+                                Heeft u een vraag over een zending of wilt u direct een rit boeken? Bel ons gerust!
+                            </p>
+
+                            <div class="space-y-6 text-sm">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-white text-lg flex-shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs text-orange-200 font-medium">Telefoon (24/7)</span>
+                                        <a href="tel:0207162400" class="font-extrabold text-base hover:underline">020 716 2400</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-white text-lg flex-shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs text-orange-200 font-medium">E-mail</span>
+                                        <a href="mailto:ops@expressalliance.nl" class="font-bold hover:underline">ops@expressalliance.nl</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-white text-lg flex-shrink-0">
+                                        <i class="fa-solid fa-user-tie"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs text-orange-200 font-medium">Eigenaar / Directie</span>
+                                        <span class="font-bold">Winston Grot</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 pt-6 border-t border-white/20 text-xs text-orange-200 italic font-bold">
+                            "We like to move it" - 25 Jaar Passie voor Logistiek
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2 bg-white p-8 sm:p-10 rounded-3xl border border-orange-100 shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Stuur ons een bericht</h3>
+                        <p class="text-gray-500 text-sm mb-8">Vul het onderstaande formulier in en ons team neemt zo snel mogelijk contact op.</p>
+
+                        <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Naam</label>
+                                    <input type="text" required placeholder="Uw naam" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-gray-50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-2">E-mailadres</label>
+                                    <input type="email" required placeholder="naam@bedrijf.nl" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-gray-50">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Bericht</label>
+                                <textarea rows="4" required placeholder="Typ hier uw bericht..." class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-gray-50 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-all shadow-md">
+                                Bericht Verzenden
+                            </button>
+                        </form>
+                        <div id="contact-alert" class="hidden mt-4 p-4 rounded-xl text-sm font-medium"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="logo.svg" alt="Express Alliance Logo" class="h-8 w-auto brightness-0 invert opacity-90" onerror="this.style.display='none'">
+                    <span class="text-lg font-black text-white">EXPRESS ALLIANCE</span>
+                </div>
+                <div class="text-xs text-gray-500 text-center md:text-right">
+                    &copy; <span id="year"></span> Express Alliance B.V. - "We like to move it" <br>
+                    Telefoon: <a href="tel:0207162400" class="text-brand-500 font-bold">020 716 2400</a> | E-mail: <a href="mailto:ops@expressalliance.nl" class="text-brand-500 font-bold">ops@expressalliance.nl</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function toggleFaq(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        function fillTestCode() {
+            document.getElementById('tracking-number').value = 'EA-1029';
+        }
+
+        function handleTrack(e) {
+            e.preventDefault();
+            const input = document.getElementById('tracking-number').value.trim();
+            const resultBox = document.getElementById('track-result');
+            if (!input) return;
+
+            resultBox.classList.remove('hidden');
+            resultBox.innerHTML = `
+                <div class="flex items-center justify-center py-6">
+                    <i class="fa-solid fa-circle-notch fa-spin text-brand-500 text-2xl mr-3"></i>
+                    <span class="text-sm font-medium text-gray-600">Zendingsgegevens ophalen voor <strong>${input}</strong>...</span>
+                </div>
+            `;
+
+            setTimeout(() => {
+                resultBox.innerHTML = `
+                    <div class="border-b border-gray-100 pb-4 mb-4 flex justify-between items-start">
+                        <div>
+                            <span class="text-xs uppercase font-extrabold text-brand-500 tracking-wider">Status Zending</span>
+                            <h4 class="text-xl font-black text-gray-900">${input.toUpperCase()}</h4>
+                            <p class="text-xs text-gray-500">Express Alliance Koerier • Verwachte levering: Vandaag voor 17:00</p>
+                        </div>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Onderweg
+                        </span>
+                    </div>
+                    <p class="text-xs text-gray-600">Uw zending is geladen in de Express Alliance bestelbus en onderweg naar de eindbestemming.</p>
+                `;
+            }, 500);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const alert = document.getElementById('contact-alert');
+            alert.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 block";
+            alert.textContent = "Bedankt voor uw bericht! Winston Grot of het Express Alliance team neemt zo snel mogelijk contact op.";
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
