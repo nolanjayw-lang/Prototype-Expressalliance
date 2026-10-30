@@ -395,7 +395,7 @@
                                     </div>
                                     <div>
                                         <span class="block text-xs text-orange-200 font-medium">Adres</span>
-                                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJjd1ONofdxUcRw_5zya0RKUA" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">
+                                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJjd1ONofdxUcRKG8tfrXmeSs" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">
                                             Bennebroekerweg 255<br>1435 CJ Rijsenhout
                                         </a>
                                     </div>
@@ -407,8 +407,8 @@
                                     </div>
                                     <div>
                                         <span class="block text-xs text-orange-200 font-medium">Kantoor Openingstijden</span>
-                                        <span class="font-bold block">Ma t/m Vr: 08:30 - 17:00</span>
-                                        <span class="text-xs text-orange-100">Za & Zo: Gesloten (24/7 Spoedservice actief)</span>
+                                        <span class="font-bold block">Maandag t/m vrijdag: 8:30 tot 17:00</span>
+                                        <span class="text-xs text-orange-100">Zaterdag en zondag gesloten (24/7 Spoedservice telefonisch actief)</span>
                                     </div>
                                 </div>
 
@@ -473,7 +473,7 @@
                 </div>
                 <div class="text-xs text-gray-500 text-center md:text-right">
                     &copy; <span id="year"></span> Express Alliance B.V. - "We like to move it" <br>
-                    Adres: <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJjd1ONofdxUcRw_5zya0RKUA" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline">Bennebroekerweg 255, 1435 CJ Rijsenhout</a> <br>
+                    Adres: <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJjd1ONofdxUcRKG8tfrXmeSs" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white underline">Bennebroekerweg 255, 1435 CJ Rijsenhout</a> <br>
                     Telefoon: <a href="tel:0207162400" class="text-brand-500 font-bold">020 716 2400</a> | E-mail: <a href="mailto:ops@expressalliance.nl" class="text-brand-500 font-bold">ops@expressalliance.nl</a>
                 </div>
             </div>
