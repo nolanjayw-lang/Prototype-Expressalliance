@@ -167,9 +167,9 @@
                         <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
                             <i class="fa-solid fa-hospital"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Medisch & CryoPDP Transport</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Medisch transport</h3>
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Gespecialiseerde ziekenhuiszendingen wereldwijd met strikte temperatuurbewaking en gecontroleerde afhandeling.
+                            Gespecialiseerde Medisch transport wereldwijd met strikte temperatuurbewaking en gecontroleerde afhandeling.
                         </p>
                     </div>
 
@@ -503,32 +503,10 @@
         function handleTrack(e) {
             e.preventDefault();
             const input = document.getElementById('tracking-number').value.trim();
-            const resultBox = document.getElementById('track-result');
             if (!input) return;
 
-            resultBox.classList.remove('hidden');
-            resultBox.innerHTML = `
-                <div class="flex items-center justify-center py-6">
-                    <i class="fa-solid fa-circle-notch fa-spin text-brand-500 text-2xl mr-3"></i>
-                    <span class="text-sm font-medium text-gray-600">Zendingsgegevens ophalen voor <strong>${input}</strong>...</span>
-                </div>
-            `;
-
-            setTimeout(() => {
-                resultBox.innerHTML = `
-                    <div class="border-b border-gray-100 pb-4 mb-4 flex justify-between items-start">
-                        <div>
-                            <span class="text-xs uppercase font-extrabold text-brand-500 tracking-wider">Status Zending</span>
-                            <h4 class="text-xl font-black text-gray-900">${input.toUpperCase()}</h4>
-                            <p class="text-xs text-gray-500">Express Alliance Koerier • Verwachte levering: Vandaag voor 17:00</p>
-                        </div>
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Onderweg
-                        </span>
-                    </div>
-                    <p class="text-xs text-gray-600">Uw zending is geladen in de Express Alliance bestelbus en onderweg naar de eindbestemming.</p>
-                `;
-            }, 500);
+            // Stuur direct door naar het officiële portaal met het ingevulde nummer
+            window.open(`https://portal.expressalliance.nl/login?tracking=${encodeURIComponent(input)}`, '_blank');
         }
 
         function handleContactSubmit(e) {
