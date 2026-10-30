@@ -257,6 +257,71 @@
 
         <!-- FAQ SECTION (Veelgestelde Vragen) -->
         <section id="faq" class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-500">Antwoorden & Informatie</span>
+                    <h2 class="text-3xl font-black text-gray-900 mt-1">Veelgestelde Vragen (FAQ)</h2>
+                    <p class="text-gray-500 text-sm mt-2">Alles wat u moet weten over onze logistieke diensten en werkwijze</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-orange-100 rounded-2xl bg-orange-50/30 overflow-hidden">
+                        <button onclick="toggleFaq('faq-1')" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center gap-4 hover:text-brand-500 transition-colors">
+                            <span>1. Hoe snel kan Express Alliance ter plaatse zijn voor een spoedopdracht?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200" id="icon-faq-1"></i>
+                        </button>
+                        <div id="faq-1" class="hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-orange-100/50 bg-white">
+                            Wij zijn 24/7 telefonisch bereikbaar via <strong>020 716 2400</strong>. Bij spoedopdrachten kunnen wij direct na telefonisch overleg een koerier aansturen die binnen de kortst mogelijke tijd bij u op locatie staat.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border border-orange-100 rounded-2xl bg-orange-50/30 overflow-hidden">
+                        <button onclick="toggleFaq('faq-2')" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center gap-4 hover:text-brand-500 transition-colors">
+                            <span>2. Naar welke landen en regio's vervoeren jullie voornamelijk?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200" id="icon-faq-2"></i>
+                        </button>
+                        <div id="faq-2" class="hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-orange-100/50 bg-white">
+                            Voornamelijk leveren we pakketten van A naar B binnen Europa en met name in Nederland. Daarnaast hebben veel van onze pakketten en medische zendingen een wereldwijde eindbestemming.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border border-orange-100 rounded-2xl bg-orange-50/30 overflow-hidden">
+                        <button onclick="toggleFaq('faq-3')" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center gap-4 hover:text-brand-500 transition-colors">
+                            <span>3. Hoe kan ik mijn zending volgen?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200" id="icon-faq-3"></i>
+                        </button>
+                        <div id="faq-3" class="hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-orange-100/50 bg-white">
+                            U ontvangt updates via ons klantportaal en kunt bovendien de Track & Trace zoekbalk bovenaan onze website gebruiken voor een snelle statusweergave.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="border border-orange-100 rounded-2xl bg-orange-50/30 overflow-hidden">
+                        <button onclick="toggleFaq('faq-4')" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center gap-4 hover:text-brand-500 transition-colors">
+                            <span>4. Welke regels gelden er voor medische producten en gevaarlijke stoffen (ADR/IATA)?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200" id="icon-faq-4"></i>
+                        </button>
+                        <div id="faq-4" class="hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-orange-100/50 bg-white">
+                            Voor medische producten en gevaarlijke stoffen gelden strikte internationale en nationale regels:
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Express Alliance volgt de relevante <strong>IATA-voorschriften</strong> voor luchtvracht en <strong>ADR-regels</strong> voor wegtransport.</li>
+                                <li>Niet alle goederen en ADR-klassen zijn toegestaan binnen ons netwerk.</li>
+                                <li>Wij beoordelen vooraf per zending of deze veilig en volgens de regels kan worden vervoerd op basis van productspecificaties en veiligheidsinformatiebladen.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="border border-orange-100 rounded-2xl bg-orange-50/30 overflow-hidden">
+                        <button onclick="toggleFaq('faq-5')" class="w-full text-left p-5 font-bold text-gray-900 flex justify-between items-center gap-4 hover:text-brand-500 transition-colors">
+                            <span>5. Hoe kan ik een zending boeken en wanneer zijn jullie bereikbaar?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200" id="icon-faq-5"></i>
+                        </button>
+                        <div id="faq-5" class="hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-orange-100/50 bg-white">
+                            Wij zijn <strong>24/7 telefonisch bereikbaar</strong> en u kunt zelf op elk gewenst moment een zending inboeken via ons klantportaal. Houd er rekening mee dat onze kantoorlocatie in het weekend gesloten is, maar onze spoedkoeriersdiensten draaien continu door.
                         </div>
                     </div>
 
